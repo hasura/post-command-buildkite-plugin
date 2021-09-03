@@ -1,0 +1,13 @@
+name: TODO
+description: TODO 
+author: https://github.com/hasura
+requirements: []
+configuration:
+  properties:
+    always:
+      type: string
+    on_success:
+      type: string
+    on_failure:
+      type: string
+  additionalProperties: false
