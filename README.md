@@ -8,13 +8,14 @@ The `always` command block will be exectued after `on_success` or `on_failure` b
 
 ```yml
 steps:
-  plugin:
-    - hasura/post-checkout#v1.0.0:
-        on_success: |
-          echo "success"
-        on_failure: |
-          echo "failure"
-        always: |
-          echo "command ran"
+  - command: echo "command executed"
+    plugins:
+      - hasura/post-command#v1.0.0:
+          on_success: |
+            echo "success"
+          on_failure: |
+            echo "failure"
+          always: |
+            echo "post command hook executed"
 ```
 

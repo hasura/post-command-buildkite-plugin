@@ -1,5 +1,5 @@
-name: TODO
-description: TODO 
+name: Post command
+description: run commands in post-command hook
 author: https://github.com/hasura
 requirements: []
 configuration:
