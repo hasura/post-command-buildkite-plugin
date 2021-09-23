@@ -1,0 +1,13 @@
+name: Post command
+description: run commands in post-command hook
+author: https://github.com/hasura
+requirements: []
+configuration:
+  properties:
+    always:
+      type: string
+    on_success:
+      type: string
+    on_failure:
+      type: string
+  additionalProperties: false

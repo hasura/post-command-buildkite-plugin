@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+set -Eo functrace
+
+report_error() {
+  echo error on line: "$1"
+  echo failed command: "$2"
+}
+trap 'report_error ${LINENO} "${BASH_COMMAND}"' ERR
+
+if [[ "${BUILDKITE_COMMAND_EXIT_STATUS}" -eq 0 ]]; then
+  eval "${BUILDKITE_PLUGIN_POST_COMMAND_ON_SUCCESS}"
+else
+  eval "${BUILDKITE_PLUGIN_POST_COMMAND_ON_FAILURE}"
+fi
+
+eval "${BUILDKITE_PLUGIN_POST_COMMAND_ALWAYS}"
